@@ -1,0 +1,200 @@
+* python
+
+** 调试
+python3才安装了tensorflow，故
+python3 test.py 可以正常执行
+python test.py 报错找不到tensor模块  //python未指向python3
+
+
+调试python:
+To debug a script run the Emacs command “M-x pdb” and invoke Python’s pdb as “python -m pdb foo.py”
+
+调试Jupyter notebooks
+import pdb; pdb.set_trace()
+在代码里插入上行， 再执行就可以调试了
+from ipdb import set_trace 也可以
+
+有语法高亮的办法
+from IPython.core.debugger import set_trace
+set_trace()
+
+
+** 安装
+IPython 6.0+ does not support Python 2.6, 2.7, 3.0, 3.1, or 3.2.
+When using Python 2.7, please install IPython 5.x LTS Long Term Support version.
+Beginning with IPython 6.0, Python 3.3 and above is required.
+
+emacs+elpy+ipython
+
+-mac安装pip
+sudo easy_install pip
+
+*** mac安装ipython
+https://krishengreenwell.com/blog/how-i-installed-ipython-on-macos-10-13-1-high-sierra/
+
+1.去这下载python3.6的安装包
+https://www.python.org/downloads/
+
+2.安装ipython
+/usr/local/bin/pip3.6 install ipython
+
+3. source .bash_profile
+
+-安装python需要的包
+pip install jedi flake8 autopep8 ipython
+
+-安装elpy
+需要>=24.4
+然后按https://www.jianshu.com/p/4e48349f8ce6配置即可
+
+查看代码是否符合风格
+c-c c-v
+
+-安装ipython
+ pip install ipython 
+
+在emacs里使用
+(elpy-use-ipython)
+
+-安装jupyter
+sudo pip3 install jupyter
+
+使用:jupyter notebook
+然后选中对应的ipynb文件
+
+sudo -H pip3 install pandas
+
+*** ipython
+ctrl+enter 执行
+
+
+先下载
+wget https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.5.0-cp36-cp36m-linux_x86_64.whl
+
+* 安装
+pip --version
+需要8.1或更高版的 pip 才能顺利安装.
+
+安装tensorflow
+pip install tensorflow
+参考:https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/1-2-install/
+
+* 能做什么
+手写体识别
+验证码识别
+语音识别
+图像合成
+** 智能推荐
++ 用户特征
+常点的频道/地理位置/性别/年龄/讨厌的分类/职业
++ 资讯特征
+分类/地理位置/热度/新鲜度
+
+* 概念
+同时使用输入数据和正确结果的训练方法叫做监督学习。还有一种叫做非监督学习，这种学习中只使用了输入数据而没有标签，但在这篇文章中我们不做讨论。
+
+http://www.wolfib.com/Image-Recognition-Intro-Part-1/
+
+kernel, filter, or feature detector: 卷积可以提取特征
+CNN:多层卷积,再对结果执行非线性激活函数
+图片分类:识别边-识别形状-识别高维特征-基于特征的分类器
+Location Invariance(位置恒定性):不用关心大象在图中位置/能处理旋转缩放的情况
+窄/宽卷积:Adding zero-padding is also called wide convolution, and not using zero-padding would be a narrow convolution.
+Channels are different “views” of your input data.
+适合用来分类:The most natural fit for CNNs seem to be classifications tasks, such as Sentiment Analysis, Spam Detection or Topic Categorization. 
+** 激活函数
+增加模型的非线性表达能力
+激活函数的目的是利于分类:值越大，激活程度越高 对于分类，也就意味着它属于这一类的概率越大.各种激活函数层出不穷，各有优缺点. https://zhuanlan.zhihu.com/p/32824193
+** Pooling Layers:
+最常见的是取最大值。
+用Pooling Layers的好处是可以得到固定size的输出矩阵。
+会丢失位置信息
+** 全连接层:
+卷积层模仿人的视觉通路提取特征，全连接层一般负责分类或者回归，由于全连接层会丢失一些特征位置信息，所以最近FCN火了起来，全部卷积层，不用全连接层。
+作用: 把分布式特征representation映射到样本标记空间。大大减少特征位置对分类带来的影响。
+因为空间结构特性被忽略了，所以全连接层不适合用于在方位上找Pattern的任务
+多层全连接层的意义: 比如要对子特征分类，也就是对猫头，猫尾巴，猫腿等进行分类
+也是一次卷积。
+** 词嵌入(即词向量)
+如何让语言表示成为NN能够处理的数据类型。
+能够帮助我们找到很难察觉的词语之间的关系。
+统计语言模型正好具有捕捉上下文信息的能力.
+词向量可以认为是神经网络训练语言模型的副产品. https://blog.csdn.net/u012052268/article/details/77170517
+词向量既能够降低维度，又能够capture到当前词在本句子中上下文的信息（表现为前后距离关系）
+1、选择使用别人训练好的词向量，注意，得使用相同语料内容领域的词向量；要么2、自己训练自己的词向量。我建议是前者，因为……坑太多了。
+
+** 加权矩阵
+** Biase
+为何要有Biase?
+
+* movie_recommender 
+sklearn: scikit-learn: machine learning in Python
+sudo -H pip3 install sklearn
+
+scipy:科学计算和工程
+sudo -H pip3 install scipy
+numpy: 处理多维数据
+pandas:数据分析包
+
+预处理后的数据保存在了preprocess.p文件
+pickle.dump((title_count, title_set, genres2int, features, targets_values, ratings, users, movies, data, movies_orig, users_orig), open('preprocess.p', 'wb'))
+
+* 笔记
+如果我们一开始就抱着如何和代码交互的想法去研究Tensorflow，那就相当于在本质上走入歧途。
+
+因为计算图只包含步骤，不包含结果！至少……现在还不包含！
+
+一般来说，sess.run()是TensorFlow的最大瓶颈，你用的越少，程序就越好。只要有可能，我们应该让它一次性输出多个结果，而不是频繁使用，千万不要把它放进复杂循环。
+
+* 朴素贝叶斯
+https://blog.csdn.net/sinat_36246371/article/details/60140664
+朴素: 特征独立; 每个特征的权重相同。
+
+* 吴恩达机器学习
+教授实现的西洋跳棋下棋程序能下赢教授自己。那么，我们实现的系统，是不是能够比我们更擅长为我们找合适的对象、实时地找问题的答案?
+
+什么是线性回归
+预测一个连续函数在某点的值
+
+"回归"名字的由来:统计学者加尔顿高个父母的子女相对他们自己在变矮.
+
+线性回归用最小二乘法求极小值。
+能否用绝对值的和求最小值?
+//可以, 绝对值也是一种距离或范数。只是大家普遍选择最小二乘法
+
+svm可以支持无限多的特征
+
+聚类只是无监督学习的一种
+
+Octave可以快速实现相关算法
+
+方阵才有逆矩阵, 是必要不充分条件
+
+任何m*m矩阵都有逆矩阵?
+不是。就像0没有倒数，元素全是0的方阵也无逆矩阵。
+另外其他近似0方阵的矩阵也无逆矩阵，举例?
+
+可以将无逆矩阵的矩阵理解为在某种方式上接近0矩阵
+
+无逆矩阵的矩阵叫奇异(singular)矩阵或退化(degenerate)矩阵
+** 梯度下降
+
+可能收敛的不是很快。举例?
+
+适用场景?
+
+batch: 使用了全部数据集
+
+正规方程组方法比梯度下降使用的步数更少
+
+? 大数据集上: 梯度下降比正规方程组方法更适用, 为什么
+
+* 机器学习实战
+
+一些属性具有长尾分布，因此你可能要将其进行转换（例如，计算其log对数）
+
+用中位数填充训练集的缺失值时，也要用该中位数填充测试集中的缺失值，也可以用来实时替换新数据中的缺失值。
+
+对复杂问题(如自然语言歧义消除)而言，数据比算法更重要。
+
+p53, 为什么np.random.seed(42)可以让每次执行的数据是一样的?
