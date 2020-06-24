@@ -151,6 +151,7 @@ https://blog.csdn.net/sinat_36246371/article/details/60140664
 朴素: 特征独立; 每个特征的权重相同。
 
 * 吴恩达机器学习
+
 教授实现的西洋跳棋下棋程序能下赢教授自己。那么，我们实现的系统，是不是能够比我们更擅长为我们找合适的对象、实时地找问题的答案?
 
 什么是线性回归
@@ -191,6 +192,14 @@ batch: 使用了全部数据集
 ? 大数据集上: 梯度下降比正规方程组方法更适用, 为什么
 
 ** 多元梯度下降
+
+梯度下降的2个主要挑战: 
+1)? 如何避免只找到局部最优解，未找到全局最优解
+2)收敛(找到最优解的速度)速度太慢
+
+线性回归的损伤函数是凸函数，无"只找到局部最优解"的问题:
+Fortunately, the MSE cost function for a Linear Regression model happens to be a convex function, which means that if you pick any two points on the curve, the line segment joining them never crosses the curve. This implies that there are no local minima, just one global minimum.
+
 用房屋大小(size)x1、房间数(number of bedrooms)x2预测房价时, x1是[0,2000], x2是[1,5], 会导致过于狭长的等高线，收敛速度很慢。 
 //解决:标准化:x1/2000, x2/5
 feature scaling: mean normaliztion
@@ -250,3 +259,9 @@ drop函数默认删除行，列需要加axis = 1
 独热向量无相近数字，均是某一个元素是1其余为0的向量，避免了相似度误判。
 
 标准化:平均值作为参照标准，故曰标准化。
+
+** 第四章
+
+np.c_是concate两个矩阵
+
+Octave有pinv计算伪逆矩阵, numpy也有numpy.linalg.pinv()
