@@ -243,6 +243,9 @@ numpy也可处理这个情况
 p53, 为什么np.random.seed(42)可以让每次执行的数据是一样的?
 ** 第二章
 *** 数据准备
+id涉及到测试集的稳定性，即新实例加入时，新实例集的20%加入测试集，测试集原来的数据不变。//p53
+用最稳定的特征创建id。经纬度是一个例子。
+
 建立自己的转换函数库
 
 中位数和平均数不同
@@ -259,7 +262,13 @@ drop函数默认删除行，列需要加axis = 1
 独热向量无相近数字，均是某一个元素是1其余为0的向量，避免了相似度误判。
 
 标准化:平均值作为参照标准，故曰标准化。
+*** 选择和训练模型
+fit之后就可以得到模型了，就可以预测predict了
 
+MSE: mean squared error
+RMSE: root mean squared error
+
+?何时用交叉验证
 ** 第四章
 
 np.c_是concate两个矩阵
@@ -271,3 +280,8 @@ Octave有pinv计算伪逆矩阵, numpy也有numpy.linalg.pinv()
 | 标准方程 | 一次性直接出结果 | O(n^2.4)~O(n^3),n特征数;O(m),m样本数 | 特征数大(比如10万级)时计算缓慢                        |
 
 O(m)如何得出的?
+* tf使用
+AttributeError: module 'tensorflow' has no attribute 'Session'
+tf.compat.v1.Session()
+
+2.X用了eager_execution
