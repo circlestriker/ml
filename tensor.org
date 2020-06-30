@@ -305,6 +305,9 @@ O(m)如何得出的?
 批量梯度下降一般是稳步下降，SGD是一上一下来回跳地往下降。
 SGD到了最优解附近会继续跳跃，导致最后得到的是近似最优解。
 
+* d2l
+为何叫深度学习:
+Deep models are deep in precisely the sense that they learn many layers of computation.
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
 tf.compat.v1.Session()
