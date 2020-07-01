@@ -305,6 +305,27 @@ O(m)如何得出的?
 批量梯度下降一般是稳步下降，SGD是一上一下来回跳地往下降。
 SGD到了最优解附近会继续跳跃，导致最后得到的是近似最优解。
 
+* d2l
+conda activate d2l
+Could not find conda environment: d2l
+原因:没创建环境
+解决:conda create --name d2l -y
+
+(base) win:dev win$ conda activate d2l
+(d2l) win:dev win$
+
+更新conda
+conda update -n base -c defaults conda
+
+pip install torch==1.5.0 torchvision
+ERROR: torchvision 0.6.1 has requirement torch==1.5.1, but you'll have torch 1.5.0 which is incompatible.
+pip install torch==1.5.1 torchvision
+
+
+Please always execute conda activate d2l to activate the runtime environment before running the code of the book or updating MXNet or the d2l package. To exit the environment, run conda deactivate.
+
+Sequence Learning: 翻译、语音识别等
+
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
 tf.compat.v1.Session()
