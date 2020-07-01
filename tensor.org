@@ -280,6 +280,7 @@ RMSE: root mean squared error
 housing.iloc[:5]
 
 ?何时用交叉验证
+//需要检验、度量模型的泛化能力时
 ** 第四章
 
 np.c_是concate两个矩阵
