@@ -361,6 +361,17 @@ Each of its elements is randomly sampled from a standard Gaussian (normal) distr
 
 为什么有的元素大于1
 
+a = torch.exp(torch.ones(2, 2))  # 得到2*2的全是e的Tensor
+print(a)
+print(torch.log(a))  # 取自然对数
+
+>>> x
+tensor([1., 2., 4., 8.])
+>>> torch.exp(x)
+tensor([2.7183e+00, 7.3891e+00, 5.4598e+01, 2.9810e+03])
+
+e^1, e^2, e^4, e^8
+
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
 tf.compat.v1.Session()
