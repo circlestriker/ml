@@ -326,6 +326,8 @@ Please always execute conda activate d2l to activate the runtime environment bef
 
 Sequence Learning: 翻译、语音识别等
 
+为何叫深度学习:
+Deep models are deep in precisely the sense that they learn many layers of computation.
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
 tf.compat.v1.Session()
