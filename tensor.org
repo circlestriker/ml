@@ -306,6 +306,7 @@ O(m)如何得出的?
 SGD到了最优解附近会继续跳跃，导致最后得到的是近似最优解。
 
 * d2l
+** installation
 conda activate d2l
 Could not find conda environment: d2l
 原因:没创建环境
@@ -324,10 +325,42 @@ pip install torch==1.5.1 torchvision
 
 Please always execute conda activate d2l to activate the runtime environment before running the code of the book or updating MXNet or the d2l package. To exit the environment, run conda deactivate.
 
-Sequence Learning: 翻译、语音识别等
+** instroduction
+Sequence Learning: 翻译、语音识别等。考虑过去和将来的样本
+哪些问题不需要Sequence Learning? 
+problems where we have some fixed number of inputs and produce a fixed number of outputs.
+后面的输入和之前的输入没有关系的场景
 
 为何叫深度学习:
 Deep models are deep in precisely the sense that they learn many layers of computation.
+
+distribution shift
+穿越?
+
+reinforcement learning and adversarial learning
+*** 强化学习
+actuator
+The behavior of an RL agent is governed by a policy. In short, a policy is just a function that maps from observations (of the environment) to actions. The goal of reinforcement learning is to produce a good policy.
+
+we can cast any supervised learning problem as an RL problem.
+有时需要放弃短期利益:
+potentially giving up some short-run reward in exchange for knowledge.
+
+马尔科夫决策过程
+When the environment is fully observed, we call the RL problem a Markov Decision Process (MDP). 
+上下文赌博机。名字有点情况，和之前的action无关，为何还说是上下文?
+When the state does not depend on the previous actions, we call the problem a contextual bandit problem. 
+When there is no state, just a set of available actions with initially unknown rewards, this problem is the classic multi-armed bandit problem.
+
+
+the autograd package automatically computes differentiation for us
+
+* preliminaries
+torch.randn(3, 4)
+Each of its elements is randomly sampled from a standard Gaussian (normal) distribution with a mean of 0 and a standard deviation of 1.
+
+为什么有的元素大于1
+
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
 tf.compat.v1.Session()
