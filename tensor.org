@@ -370,7 +370,7 @@ When there is no state, just a set of available actions with initially unknown r
 
 the autograd package automatically computes differentiation for us
 
-* preliminaries
+** preliminaries
 torch.randn(3, 4)
 Each of its elements is randomly sampled from a standard Gaussian (normal) distribution with a mean of 0 and a standard deviation of 1.
 
@@ -386,6 +386,29 @@ tensor([1., 2., 4., 8.])
 tensor([2.7183e+00, 7.3891e+00, 5.4598e+01, 2.9810e+03])
 
 e^1, e^2, e^4, e^8
+
+
+broadcast: for matrix a it replicates the columns and for matrix b it replicates the rows before adding up both elementwise.
+a = torch.arange(3).reshape((3, 1))
+b = torch.arange(2).reshape((1, 2))
+a, b
+(tensor([[0],
+         [1],
+         [2]]),
+ tensor([[0, 1]]))
+a加一列先变为
+[0],[0]
+[1],[1]
+[2],[2]
+b加2行变为
+0,1
+0,1
+0,1
+然后2个矩阵再相加
+
+If the value of x is not reused in subsequent computations, we can also use x[:] = x + y or x += y to reduce the memory overhead of the operation.
+
+
 
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
