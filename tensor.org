@@ -424,7 +424,8 @@ If the value of x is not reused in subsequent computations, we can also use x[:]
 
 为什么python命令行可以import torch, 而在notebook里报ModuleNotFoundError: No module named 'torch'
 
-
+The shape is a tuple that lists the length (dimensionality) along each axis of the tensor. 
+//shape描述的是张量在空间中的外形
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
 tf.compat.v1.Session()
