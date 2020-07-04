@@ -482,6 +482,14 @@ torch.Size([1, 1, 1])
 
 The shape is a tuple that lists the length (dimensionality) along each axis of the tensor. 
 //shape描述的是张量在空间中的外形
+
+A_sum_axis0 = A.sum(axis=0)
+按行取元素，列保留，消除行
+//被sum的axis被reduce了
+
+A_sum_axis1 = A.sum(axis=1)
+行保留，消除列
+
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
 tf.compat.v1.Session()
