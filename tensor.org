@@ -279,6 +279,19 @@ RMSE: root mean squared error
 
 housing.iloc[:5]
 
+*** 网格搜索
+?什么是网格搜索
+网格搜索是一种通过遍历给定的参数组合(比如决策树的最大深度)来优化模型表现的方法。
+参数组合形成的空间，类似网格，故名网格搜索。
+
+给出一系列的最大深度的值，比如 {'max_depth': [1,2,3,4,5]}，希望选择最优最大深度。
+如何评估哪个最大深度的模型是最优的呢? 其中一个经典的方法是K折交叉验证。
+
+? 何时用gridsearch
+需要优化模型时。
+如直接用决策树得到的分数大约是92%，经过网格搜索优化以后，可以在测试集得到95.6%的准确率。
+
+? 网格搜索会自动查找是否添加我们不确定的特征
 ** 第四章
 
 np.c_是concate两个矩阵
@@ -459,13 +472,16 @@ tensor([[[ 1.,  2.,  3.],
         [[19., 20., 21.],
          [22., 23., 24.],
          [25., 26., 27.]]])
->>> a.size()
-torch.Size([3, 3, 3])
+>>> a.size() torch.Size([3, 3, 3])
 >>> b.size()
 torch.Size([1, 1, 1, 1])
 >>> b2.size()
 torch.Size([1, 1, 1])
 
+为什么python命令行可以import torch, 而在notebook里报ModuleNotFoundError: No module named 'torch'
+
+The shape is a tuple that lists the length (dimensionality) along each axis of the tensor. 
+//shape描述的是张量在空间中的外形
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
 tf.compat.v1.Session()
