@@ -408,7 +408,63 @@ b加2行变为
 
 If the value of x is not reused in subsequent computations, we can also use x[:] = x + y or x += y to reduce the memory overhead of the operation.
 
+>>> a
+tensor([[[ 0.,  1.,  2.],
+         [ 3.,  4.,  5.],
+         [ 6.,  7.,  8.]],
 
+        [[ 9., 10., 11.],
+         [12., 13., 14.],
+         [15., 16., 17.]],
+
+        [[18., 19., 20.],
+         [21., 22., 23.],
+         [24., 25., 26.]]])
+>>> b = torch.tensor([1,1,1,1]);
+>>> b
+tensor([1, 1, 1, 1])
+>>> c =  a +b
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+RuntimeError: The size of tensor a (3) must match the size of tensor b (4) at non-singleton dimension 2
+>>>
+>>> b = torch.tensor([[[[1]]]]); #[[[[4个括号
+>>> b
+tensor([[[[1]]]])
+>>> c =  a +b    #??这里为什么可以加?
+>>> c
+tensor([[[[ 1.,  2.,  3.],
+          [ 4.,  5.,  6.],
+          [ 7.,  8.,  9.]],
+
+         [[10., 11., 12.],
+          [13., 14., 15.],
+          [16., 17., 18.]],
+
+         [[19., 20., 21.],
+          [22., 23., 24.],
+          [25., 26., 27.]]]])
+>>> b2 = torch.tensor([[[1]]]);
+>>> b2
+tensor([[[1]]])
+>>> a+b2
+tensor([[[ 1.,  2.,  3.],
+         [ 4.,  5.,  6.],
+         [ 7.,  8.,  9.]],
+
+        [[10., 11., 12.],
+         [13., 14., 15.],
+         [16., 17., 18.]],
+
+        [[19., 20., 21.],
+         [22., 23., 24.],
+         [25., 26., 27.]]])
+>>> a.size()
+torch.Size([3, 3, 3])
+>>> b.size()
+torch.Size([1, 1, 1, 1])
+>>> b2.size()
+torch.Size([1, 1, 1])
 
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
