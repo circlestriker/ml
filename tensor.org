@@ -353,6 +353,17 @@ pip install torch==1.5.1 torchvision
 
 Please always execute conda activate d2l to activate the runtime environment before running the code of the book or updating MXNet or the d2l package. To exit the environment, run conda deactivate.
 
+ModuleNotFoundError: No module named 'd2l'
+解决:
+pip install -U d2l -f https://d2l.ai/whl.html
+
+
+(base) striker:~ striker$ conda activate d2l
+(d2l) striker:~ striker$ pip install -U d2l -f https://d2l.ai/whl.html
+base和d2l这2个不同环境的packages的不共享的。
+base安装过numpy, 到了d2l需要重装。
+
+
 ** instroduction
 Sequence Learning: 翻译、语音识别等。考虑过去和将来的样本
 哪些问题不需要Sequence Learning? 
