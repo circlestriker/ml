@@ -507,8 +507,30 @@ differential calculus 微分
 integral calculus 积分
 
 偏微分是标量，梯度向量是向量
+
+2.4.3梯度相关公式，如果有具体的例子辅助解析，会更让人更容易理解。
+
+
 *** 2.4.6 ex
 2.  [6x1, 5e^x2]^T
+
+    
+*** 2.5 自动微分
+? 为什么用backpropagate 
+
+Note the requires_grad=True argument when creating x, it tells the framework we need allocate gradient space for x in the future.
+避免每次分配内存占用太多内存。
+
+The gradient of the function  y=2𝐱^T 𝐱  with respect to  𝐱  should be  4𝐱 . 
+x^T * x 可以认为是x^2, 故y对x求导是4x
+
+x是 tensor([0., 1., 2., 3.], requires_grad=True))
+? 为什么x.grad是 tensor([0., 1., 4., 9.])
+
+?Computing the Gradient of Python Control Flow
+?piecewise linear
+
+?We then record the computation of our target value, execute its backward function, and access the resulting gradient via our variable's grad attribute.
 
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
