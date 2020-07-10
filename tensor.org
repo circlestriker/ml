@@ -532,11 +532,21 @@ x是 tensor([0., 1., 2., 3.], requires_grad=True))
 
 ?We then record the computation of our target value, execute its backward function, and access the resulting gradient via our variable's grad attribute.
 
+*** 概率
+大数定律如此简单:
+The law of large numbers tell us that as the number of tosses grows this estimate will draw closer and closer to the true underlying probability. 
 ** ch3 linear neural networks
 
 classic statistical learning techniques such as linear and softmax regression can be cast as linear neural networks. 
 
 Not every prediction problem is a classic regression problem. 
+
+maximum likelihood estimators 最大似然估计
+While, maximizing the product of many exponential functions, might look difficult, we can simplify things significantly, without changing the objective, by maximizing the log of the likelihood instead. 
+
+Since for linear regression, every input is connected to every output
+这就叫ully-connected layer or dense layer
+全连接层、稠密层
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
 tf.compat.v1.Session()
