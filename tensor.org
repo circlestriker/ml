@@ -547,6 +547,12 @@ While, maximizing the product of many exponential functions, might look difficul
 Since for linear regression, every input is connected to every output
 这就叫ully-connected layer or dense layer
 全连接层、稠密层
+
+标准分布、正态分布的区别?
+
+features[:, 1] 所有行, 第二列
+features[:, 0] 所有行, 第一列
+
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
 tf.compat.v1.Session()
