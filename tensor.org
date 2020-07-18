@@ -557,6 +557,17 @@ Since for linear regression, every input is connected to every output
 features[:, 1] 所有行, 第二列
 features[:, 0] 所有行, 第一列
 
+读取小批量数据时，MXNet更高效且可以处理文件和数据流中的数据，不仅仅是内存数据。
+如何实现的?
+
+when we add a vector and a scalar, the scalar is added to each component of the vector.
+
+sgd里backward如何理解?
+
+for deep networks, there exist many configurations of the parameters that lead to accurate prediction.
+
+*** ex
+1. w不能是0，否则
 * tf使用
 AttributeError: module 'tensorflow' has no attribute 'Session'
 tf.compat.v1.Session()
