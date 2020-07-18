@@ -337,6 +337,15 @@ If your model is underfitting the training data, adding more train‐ ing exampl
 
 One way to improve an overfitting model is to feed it more training data until the validation error reaches the training error.
 过拟合时，用更多训练数据直到验证误差接近训练误差
+
+*** softmax回归
+多元逻辑回归
+
+交叉熵:
+几乎都是晴天时, 0表示晴天(占一比特).
+1, 11, 101, 111, 1001, 1011, 1101, 1111表示其他7个类别。
+这种表示，空间效率是更高的。
+
 * d2l
 ** installation
 conda activate d2l
