@@ -157,6 +157,9 @@ https://blog.csdn.net/sinat_36246371/article/details/60140664
 什么是线性回归
 预测一个连续函数在某点的值
 
+
+回归和分类的区别: 值域, 一个连续、一个离散。
+
 "回归"名字的由来:统计学者加尔顿高个父母的子女相对他们自己在变矮.
 
 线性回归用最小二乘法求极小值。
@@ -574,6 +577,9 @@ when we add a vector and a scalar, the scalar is added to each component of the 
 sgd里backward如何理解?
 
 for deep networks, there exist many configurations of the parameters that lead to accurate prediction.
+*** 3.1 线性回归
+Even if we will never see any homes with zero area, or that are precisely zero years old, we still need the intercept or else we will limit the expressivity of our linear model.
+为什么bias有这个功能?
 
 *** ex
 1. w不能是0，否则
