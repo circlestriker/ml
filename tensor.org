@@ -577,6 +577,9 @@ when we add a vector and a scalar, the scalar is added to each component of the 
 sgd里backward如何理解?
 
 for deep networks, there exist many configurations of the parameters that lead to accurate prediction.
+
+even when the loss surfaces are high-dimensional and nonconvex, it turns out that we can still train models effectively in practice.
+非凸函数也不影响?
 *** 3.1 线性回归
 Even if we will never see any homes with zero area, or that are precisely zero years old, we still need the intercept or else we will limit the expressivity of our linear model.
 为什么bias有这个功能?
