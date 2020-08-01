@@ -75,3 +75,6 @@ print('第一次列表b：',b)
 np.random.seed(3)
 b = rand(5)
 print('第二次列表b：',b)
+
+** 数据探索和可视化、发现规律
+
