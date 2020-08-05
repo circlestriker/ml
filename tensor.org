@@ -273,6 +273,7 @@ drop函数默认删除行，列需要加axis = 1
 
 标准化:平均值作为参照标准，故曰标准化。
 *** 选择和训练模型
+    
 fit之后就可以得到模型了，就可以预测predict了
 
 MSE: mean squared error
