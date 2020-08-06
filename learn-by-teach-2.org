@@ -122,3 +122,8 @@ housing.iloc[:5]
 如直接用决策树得到的分数大约是92%，经过网格搜索优化以后，可以在测试集得到95.6%的准确率。
 
 ? 网格搜索会自动查找是否添加我们不确定的特征, 如何做到的?
+
+
+# Label those above 5 as 5
+housing["income_cat"].where(housing["income_cat"] < 5, 5.0, inplace=True)
+#上面为什么是<5
