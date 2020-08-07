@@ -165,3 +165,23 @@ Scikit-Learn 设计
 housing_cat_encoded, housing_categories = housing_cat.factorize()
 housing_cat_encoded[:10]
 
+*** 自定义转换器
+
+加一个超参数。数据准备步骤越自动化，可以自动化的操作组合就越多，越容易发现更好用的组合（并能节省大量时间）。
+
+
+*** 特征缩放
+
+**** 线性函数归一化
+（许多人称其为归一化（normalization））很简单：值被转变、重新缩放，直到范围变成 0 到 1
+
+MinMaxScaler
+
+feature_range
+
+**** 标准化
+首先减去平均值（所以标准化值的平均值总是 0），然后除以方差，使得到的分布具有单位方差。
+
+?假设一个街区的收入中位数由于某种错误变成了100，归一化会将其它范围是 0 到 15 的值变为 0-0.15，但是标准化不会受什么影响。
+
+StandardScaler
