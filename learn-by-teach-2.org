@@ -127,3 +127,41 @@ housing.iloc[:5]
 # Label those above 5 as 5
 housing["income_cat"].where(housing["income_cat"] < 5, 5.0, inplace=True)
 #上面为什么是<5
+
+
+*** 属性组合试验
+
+scatter_matrix画出的图，对角线为什么是直方图?
+
+相关矩阵：
+>>> corr_matrix = housing.corr()
+显然，卧室数/总房间数的比例越低，房价就越高。每户的房间数也比街区的总房间数的更有信息，很明显，房屋越大，房价就越高。
+这一步的数据探索不必非常完备，此处的目的是有一个正确的开始，快速发现规律，以得到一个合理的原型
+
+** 为机器学习算法准备数据
+
+建立自己的函数库
+
+*** 数据清洗
+
+处理缺失值(total_bedrooms有缺失):
+-去掉对应街区
+-去掉整个属性
+-用(0,平均值,中位数等)赋值
+
+Scikit-Learn 提供了一个方便的类来处理缺失值：Imputer。
+因为只有数值属性才能算出中位数，我们需要创建一份不包括文本属性ocean_proximity的数据副本.
+
+Scikit-Learn 设计
+- 接口一致性: 估计器、转换器、预测器。
+- 可检验、可访问
+- 类不可扩散。保持了简单
+- 可组合
+- 合理的默认值
+
+*** 处理文本和类别属性
+
+在原书中使用LabelEncoder转换器来转换文本特征列的方式是错误的，该转换器只能用来转换标签（正如其名）。在这里使用LabelEncoder没有出错的原因是该数据只有一列文本特征值，在有多个文本特征列的时候就会出错。应使用factorize()方法来进行操作：
+housing_cat_encoded, housing_categories = housing_cat.factorize()
+housing_cat_encoded[:10]
+
