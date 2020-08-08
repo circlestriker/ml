@@ -2,6 +2,7 @@
 
 ** 机器学习实战 handson-ml
 https://github.com/ageron/handson-ml
+
 https://github.com/apachecn/hands-on-ml-zh
 
 特点: 较早展示代码和相关工具，较早进入实战。
@@ -115,3 +116,4 @@ AlphaGo
 点开视频，关视频，点屏幕分享
 
 录屏只录取了听众的声音，无主讲的声音。
+需要在听众侧录屏才有主讲的声音。
