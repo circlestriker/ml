@@ -1,0 +1,5 @@
+* ch3 分类
+用Jupyter Notebook画图为什么不显示图像直接到笔记本的out[1]中？
+
+需要加一句：
+%matplotlib inline
