@@ -616,3 +616,44 @@ D1,...,D9去验证D10
 
 
 缺失值可能有业务含义 
+* text to sql
+relation-aware self attention
+
+Schema -> 可以理解为数据库的库、表、字段结构。DDL 就是在定义 Schema。
+
+metamodel
+
+bert encoding
+
+C K V
+
+pointer mechanism
+
+pointer networks
+https://arxiv.org/abs/1506.03134
+输出一定在输入里
+
+对应关系有顺序吗?
+可以认为是没有顺序
+
+encoder的作用只是把输入特征化吗?
+
+positional encoding
+
+独立的特征变为和上下文有关的特征
+
+刚刚讲lstm可以生成树吗
+//可以
+
+A Syntactic Neural Model for General-Purpose Code Generation
+https://arxiv.org/abs/1704.01696
+
+大佬们要不要做做这个Text to Rexp
+-你这个idea好啊
+-你要是能做出来一个数据集
+-可以发一篇顶会
+
+对对 我觉得Attention is all you need 可以看看
+因为各个领域都得用到
+
+encoder decoder 都是判别模型
