@@ -26,3 +26,13 @@ Recall=TP/(TP+FN)
 
 检测儿童视频: 低召回率，高准确率
 监控盗贼: 高召回率，低准确率
+
+
+why the precision curve is bumpier than the recall curve
+4/5降为3/4
+
+**** 准确率、召回率的折中选择(trade off)
+
+
+* ch4 Training Models
+
