@@ -260,3 +260,27 @@ StandardScaler
 定期保存系统状态快照，好能方便地回滚到之前的工作状态。
 
 * tf
+MXNet在aws比较适合，因为aws对其做了不少优化。
+
+keras是更高层的api，还支持MXNet.
+
+docker里使用tf比较方便，避免搞垮服务器。
+
+colab.research.google.com
+可以使用gpu、tpu
+
+kaggle.com有竞赛、notebook等
+
+如果激活函数f是线性的，则对应的是一层数据源。
+一般情况f是非线性的。
+
+dense:全连接网络
+
+mse、mae区别
+mse对数值平方，会关注误差比较大的
+mae不会这样
+
+https://dragonthink.coding.net/user/projects
+weixin登录
+
+jupyter2.lab99.org:8888
